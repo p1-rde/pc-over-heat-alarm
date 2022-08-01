@@ -7,7 +7,7 @@ while(True):
     cpuTemp = sp.run("sensors | grep -w 'CPU'|awk '{print $2}'", shell=True, capture_output=True)
     cpuTemp = cpuTemp.stdout[0]
 
-    if cpuTemp>40:
+    if cpuTemp>50:
         notify2.init('Alarm')
         n = notify2.Notification("Overheat Alarm!",
                                 "CPU is "+str(cpuTemp)+"\N{DEGREE SIGN}C",
