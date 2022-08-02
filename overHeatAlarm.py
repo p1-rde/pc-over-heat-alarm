@@ -5,7 +5,7 @@ import time
 
 while(True):
     cpuTemp = sp.run("sensors | grep -w 'CPU'|awk '{print $2}'", shell=True, capture_output=True)
-    cpuTemp = cpuTemp.stdout[0]
+    cpuTemp = cpuTemp.stdout[1]
 
     if cpuTemp>50:
         notify2.init('Alarm')
